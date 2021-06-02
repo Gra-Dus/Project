@@ -1,7 +1,10 @@
 package com.example.firstproject
 
-import androidx.core.widget.TextViewCompat
-import com.example.firstproject.models.User
+import com.example.firstproject.extenshions.TimeUnits
+import com.example.firstproject.extenshions.add
+import com.example.firstproject.extenshions.format
+import com.example.firstproject.extenshions.toUserView
+import com.example.firstproject.models.*
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -39,21 +42,29 @@ fun test_factory(){
     @Test
     fun test_copy(){
         val user = User.makeUser("Kondratiy Wally")
-        var user2 = user.copy(lastVisit = Date())
-        var user3 = user.copy(lastName = "Wonka", lastVisit = Date())
-
-        if(user.equals(user2)){
-            println("equals data and hash \n ${user.hashCode()} $user \n ${user2.hashCode()} $user2")
-        }else
-        {
-            println("not equals and hash \\n ${user.hashCode()} $user \\n ${user2.hashCode()} $user2\" ")
+        var user2 = user.copy(lastVisit = Date().add(-2, TimeUnits.SECOND))
+        var user3 = user.copy(lastVisit = Date().add(-3, TimeUnits.DAY))
+        var user4 = user.copy(lastName = "Wonka", lastVisit = Date().add(2,TimeUnits.HOUR))
+    }
+    @Test
+    fun test_data_maping(){
+        val user = User.makeUser("Клоп Андрей")
+        val newuser = user.copy(lastVisit = Date().add(-900, TimeUnits.HOUR))
+        println(newuser)
+        val userView = newuser.toUserView()
+        userView.printMe()
+    }
+    @Test
+    fun test_abstract_factory(){
+        val user = User.makeUser("Классика Антон")
+        val txtMessage = BaseMessage.makeMessage(user, Chat("0"),payload = "any text message",type= "text")
+        val imgMessage = BaseMessage.makeMessage(user, Chat("0"),payload = "any image url",type= "image")
+        when(imgMessage){
+            is TextMessage-> println("this is text message")
+            is ImageMessage-> println("this is img message")
         }
-        if(user === user2){
-            println("equals data and hash ${System.identityHashCode(user)} ${System.identityHashCode(user2)}")
-        }else
-        {
-            println("not equals data and hash  ${System.identityHashCode(user)} ${System.identityHashCode(user2)}")
-        }
+        println(txtMessage.formatMessage())
+        println(imgMessage.formatMessage())
 
     }
 }
