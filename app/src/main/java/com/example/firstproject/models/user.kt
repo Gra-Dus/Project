@@ -26,7 +26,8 @@ data class User (
 init{
     println("Im not muggle \n"
             + (if (lastName=="damboldor") "my name $firstName $lastName" else "And my name is $firstName $lastName") +
-        "${getIntro()}")
+            getIntro()
+    )
 }
     private fun getIntro() = """
         tu tu tu tuuuu

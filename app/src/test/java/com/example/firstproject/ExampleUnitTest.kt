@@ -1,9 +1,6 @@
 package com.example.firstproject
 
-import com.example.firstproject.extenshions.TimeUnits
-import com.example.firstproject.extenshions.add
-import com.example.firstproject.extenshions.format
-import com.example.firstproject.extenshions.toUserView
+import com.example.firstproject.extenshions.*
 import com.example.firstproject.models.*
 import org.junit.Test
 
@@ -67,4 +64,5 @@ fun test_factory(){
         println(imgMessage.formatMessage())
 
     }
+
 }
