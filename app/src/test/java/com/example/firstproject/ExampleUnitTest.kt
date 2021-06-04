@@ -64,5 +64,10 @@ fun test_factory(){
         println(imgMessage.formatMessage())
 
     }
+    @Test
+    fun testHero(){
+        val hero = Hero()
+        print(hero.askQuestion())
+    }
 
 }
