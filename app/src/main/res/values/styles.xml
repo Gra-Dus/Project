@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.FirstProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Profile">
+
+    </style>
+
+    <style name="Profile.EditText" parent="Profile">
+        <item name="android:enabled">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:textColor">@color/color_primary_light</item>
+    </style>
+
+    <style name="Profile.EditText.Single" parent="Profile.EditText">
+        <item name="singleLine">true</item>
+    </style>
+
+<style name="Profile.EditText.Multiline" parent="Profile.EditText">
+    <item name="android:inputType">textMultiLine</item>
+    <item name="android:maxLength">128</item>
+</style>
+
+    // 4-й урок 54.15
+    <style name="Profile.Nickname" parent="Profile">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/font_large_20</item>
+    </style>
+
+    <style name="Profile.Rank" parent="Profile">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/font_normal_16</item>
+    </style>
+
+    <style name="Profile.Metrix" parent="Profile">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Profile.Metrix.Label" parent="Profile.Metrix">
+        <item name="android:textSize">@dimen/font_normal_16</item>
+    </style>
+
+    <style name="Profile.Metrix.Value" parent="Profile.Metrix">
+        <item name="android:drawablePadding">4dp</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/font_large_20</item>
+    </style>
+</resources>
