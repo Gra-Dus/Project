@@ -34,14 +34,18 @@
     <item name="android:maxLength">128</item>
 </style>
 
-    // 4-й урок 54.15
-    <style name="Profile.Nickname" parent="Profile">
+
+    <style name="Profile.Header" parent="Profile">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Profile.Header.Nickname" parent="Profile.Header">
         <item name="fontFamily">sans-serif-medium</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/font_large_20</item>
+        <item name="android:layout_marginTop">@dimen/spacing_normal_16</item>
     </style>
 
-    <style name="Profile.Rank" parent="Profile">
+    <style name="Profile.Header.Rank" parent="Profile.Header">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/font_normal_16</item>
     </style>
@@ -58,5 +62,13 @@
         <item name="android:drawablePadding">4dp</item>
         <item name="fontFamily">sans-serif-medium</item>
         <item name="android:textSize">@dimen/font_large_20</item>
+    </style>
+
+    <style name="Profile.InfoItem">
+        <item name="android:paddingTop">@dimen/spacing_normal_16</item>
+        <item name="android:paddingBottom">@dimen/spacing_normal_16</item>
+        <item name="android:paddingLeft">@dimen/spacing_normal_16</item>
+        <item name="android:paddingRight">@dimen/spacing_normal_16</item>
+        <item name="android:minHeight">72dp</item>
     </style>
 </resources>
