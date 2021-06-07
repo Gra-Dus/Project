@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.FirstProject" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
+        <color name="color_primary_dark">#1C0E42</color>
+        <color name="color_accent">#9966CC</color>
+        <color name="color_accent_night">#2196F3</color>
+        <item name="colorAccentedSurface">@color/color_divider_dark</item>
+        <item name="colorIcon">@color/black</item>
+        <item name="colorDivider">@color/color_divider_dark</item>
+    </style>
+</resources>

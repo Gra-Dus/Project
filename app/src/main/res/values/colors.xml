@@ -10,8 +10,14 @@
     <color name="color_primary_light">#473770</color>
     <color name="color_primary_dark">#1C0E42</color>
     <color name="color_accent">#9966CC</color>
+    <color name="color_accent_night">#2196F3</color>
     <color name="color_accent_secondary">#BEAC32EE</color>
     <color name="color_divider_dark">#1FOOOOOO</color>
     <color name="color_divider_light">#1FFFFFFF</color>
-
+    <color name="colorPrimary">@color/purple_500</color>
+    <color name="colorPrimaryVariant">@color/purple_700</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorSecondary">@color/teal_200</color>
+    <color name="colorSecondaryVariant">@color/teal_700</color>
+    <color name="colorOnSecondary">@color/black</color>
 </resources>

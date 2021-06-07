@@ -15,8 +15,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@drawable/mountains"
-            app:aspectRatio="3" />
+            android:src="@drawable/lake"
+            app:aspectRatio="3"
+             />
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,6 +39,7 @@
                 android:layout_centerHorizontal="true"/>
 
             <ImageButton
+                android:id="@+id/btn_edit"
                 android:layout_width="@dimen/btn_round_size_40"
                 android:layout_height="@dimen/btn_round_size_40"
                 android:layout_marginStart="@dimen/spacing_huge_32"
@@ -47,7 +49,7 @@
                 android:src="@drawable/ic_edit_24" />
             <TextView
                 style="@style/Profile.Header.Nickname"
-                android:id="@+id/tv_name"
+                android:id="@+id/tv_nick_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_avatar"
@@ -59,7 +61,7 @@
                 android:id="@+id/tv_rank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_name"
+                android:layout_below="@+id/tv_nick_name"
                 android:text="Junior Android Developer"
                 android:layout_centerHorizontal="true"/>
         </RelativeLayout>
@@ -79,6 +81,7 @@
             android:paddingBottom="@dimen/spacing_normal_16">
             <TextView
                 style="@style/Profile.Metrix.Value"
+                android:id="@+id/tv_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
@@ -105,6 +108,7 @@
     android:paddingBottom="@dimen/spacing_normal_16">
     <TextView
         style="@style/Profile.Metrix.Value"
+        android:id="@+id/tv_respect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
@@ -122,7 +126,8 @@
         style="@style/Profile.InfoItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/spacing_normal_16">
+        android:paddingTop="@dimen/spacing_normal_16"
+        android:paddingBottom="8sp">
         <ImageView
             android:id="@+id/ic_avatar"
             android:layout_width="@dimen/btn_round_size_40"
@@ -137,15 +142,14 @@
             android:layout_toEndOf="@+id/ic_avatar">
 
             <EditText
-                style="@style/Profile.EditText.Single"
                 android:id="@+id/et_first_name"
+                style="@style/Profile.EditText.Single"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/profile_hint_first_name"
-                tools:text="Kelly"
-                android:inputType="textPersonName"
                 android:imeOptions="actionNext"
-                />
+                android:inputType="textPersonName"
+                tools:text="Kelly" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -173,7 +177,7 @@
             android:id="@+id/divider_1"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_accent"
+            android:background="?attr/colorDivider"
             android:layout_marginEnd="@dimen/spacing_normal_16">
         </View>
 
@@ -191,9 +195,12 @@
                 android:src="@drawable/ic_about" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/wr_about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_normal_16">
+                android:layout_marginStart="@dimen/spacing_normal_16"
+                android:enabled="false"
+                app:counterMaxLength="128">
 
                 <EditText
                     style="@style/Profile.EditText.Multiline"
@@ -212,8 +219,8 @@
             android:id="@+id/divider_2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_accent"
-            android:layout_marginEnd="@dimen/spacing_normal_16">
+            android:background="?attr/colorDivider"
+            android:layout_marginEnd="8dp">
         </View>
         <LinearLayout
             android:id="@+id/ui_repos"
@@ -233,7 +240,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/spacing_normal_16"
                 android:layout_weight="1"
-                android:layout_marginRight="@dimen/spacing_normal_16"
                 >
 
                 <EditText
@@ -246,8 +252,10 @@
                     android:imeOptions="actionDone"/>
             </com.google.android.material.textfield.TextInputLayout>
             <ImageView
+                android:id="@+id/ic_eye"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:layout_marginLeft="@dimen/spacing_normal_16"
                 android:src="@drawable/ic_eye"
                 android:layout_gravity="center_vertical"
                 />
@@ -257,7 +265,7 @@
             android:id="@+id/divider_3"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/color_accent"
+            android:background="?attr/colorDivider"
             android:layout_marginEnd="@dimen/spacing_normal_16">
         </View>
 </LinearLayout>
