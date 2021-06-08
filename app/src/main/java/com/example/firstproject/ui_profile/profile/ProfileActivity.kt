@@ -47,12 +47,10 @@ class ProfileActivity : AppCompatActivity() {
         viewModel.getTheme().observe(this, Observer{ updateTheme(it)})
 
     }
-
     private fun updateTheme(mode: Int) {
         Log.d("Al", "updateTheme")
 delegate.localNightMode = mode
     }
-
     private fun updateUI(profile:Profile){
         profile.toMap().also {
             for((k,v) in viewFields){

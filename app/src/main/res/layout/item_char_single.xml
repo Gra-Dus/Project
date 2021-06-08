@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_size"
+    android:padding="@dimen/spacing_normal_16"
+    android:background="@color/colorPrimary"
+    >
+<com.example.firstproject.ui_profile.custom.AvatarImageView
+    android:layout_height="@dimen/avatar_size"
+    android:layout_width="@dimen/avatar_size"
+    android:layout_alignParentLeft="true"
+    android:src = "@drawable/ava_big">
+</com.example.firstproject.ui_profile.custom.AvatarImageView>
+</RelativeLayout>
