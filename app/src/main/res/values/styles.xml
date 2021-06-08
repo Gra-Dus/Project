@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
-
-
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <style name="Profile">
 
-    </style>
-
-    <style name="Profile.EditText" parent="Profile">
+    </style>    <style name="Profile.EditText" parent="Profile">
         <item name="android:enabled">false</item>
         <item name="android:focusable">false</item>
         <item name="android:focusableInTouchMode">false</item>

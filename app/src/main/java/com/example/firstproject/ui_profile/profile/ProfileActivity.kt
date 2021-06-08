@@ -5,6 +5,7 @@ import android.graphics.ColorFilter
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -25,6 +26,7 @@ class ProfileActivity : AppCompatActivity() {
     private  lateinit var viewModel: ProfileViewModel
     lateinit var viewFields :Map<String,TextView>
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("AL", "OnCreate")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         initViews(savedInstanceState)
@@ -42,8 +44,15 @@ class ProfileActivity : AppCompatActivity() {
     private fun initViewModel(){
         viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
         viewModel.getProfileData().observe(this, Observer{ updateUI(it)})
+        viewModel.getTheme().observe(this, Observer{ updateTheme(it)})
 
     }
+
+    private fun updateTheme(mode: Int) {
+        Log.d("Al", "updateTheme")
+delegate.localNightMode = mode
+    }
+
     private fun updateUI(profile:Profile){
         profile.toMap().also {
             for((k,v) in viewFields){
@@ -69,6 +78,9 @@ class ProfileActivity : AppCompatActivity() {
             if(!isEditMode) saveProfileInfo()
             isEditMode = !isEditMode
             showCurrentMode(isEditMode)
+        }
+        btn_switch_theme.setOnClickListener{
+            viewModel.switchTheme()
         }
     }
     private fun showCurrentMode(isEdit: Boolean) {

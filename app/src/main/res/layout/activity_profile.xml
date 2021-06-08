@@ -24,6 +24,7 @@
             android:layout_gravity="center"
             >
             <ImageButton
+                android:id="@+id/btn_switch_theme"
                 android:layout_width="@dimen/btn_round_size_40"
                 android:layout_height="@dimen/btn_round_size_40"
                 android:background="@drawable/btn_round_bg"
@@ -85,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                app:drawableLeftCompat="@drawable/ic_grade_24" />
+                android:drawableStart="@drawable/ic_grade_24" />
             <TextView
                 style="@style/Profile.Metrix.Label"
                 android:layout_width="wrap_content"
@@ -161,15 +162,15 @@
             android:layout_below="@+id/w_first_name"
         >
 
-        <EditText
-            style="@style/Profile.EditText.Single"
-            android:id="@+id/et_last_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/profile_hint_last_name"
-            tools:text="Jons"
-            android:inputType="textPersonName"
-            android:imeOptions="actionNext"/>
+            <EditText
+                android:id="@+id/et_last_name"
+                style="@style/Profile.EditText.Single"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/profile_hint_last_name"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                tools:text="Jons" />
     </com.google.android.material.textfield.TextInputLayout>
     </RelativeLayout>
         <View
@@ -190,6 +191,7 @@
             >
 
             <ImageView
+                android:id="@+id/ic_about"
                 android:layout_width="@dimen/btn_round_size_40"
                 android:layout_height="@dimen/btn_round_size_40"
                 android:src="@drawable/ic_about" />

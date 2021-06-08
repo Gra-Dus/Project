@@ -2,6 +2,7 @@ package com.example.firstproject.repositories
 
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.firstproject.App
 import com.example.firstproject.models.Profile
 
@@ -12,19 +13,16 @@ object PreferencesRepository {
     private const val REPOS = "REPOS"
     private const val RATING = "RATING"
     private const val RESPECT = "RESPECT"
+    private const val APP_THEME = "APP_THEME"
     private val prefs:SharedPreferences by lazy {
         val ctx = App.applicationContext()
         PreferenceManager.getDefaultSharedPreferences(ctx)
     }
-    fun getProfile(): Profile = Profile(
-        prefs.getString(FIRST_NAME, "")!!,
-        prefs.getString(LAST_NAME, "")!!,
-        prefs.getString(ABOUT, "")!!,
-        prefs.getString(REPOS, "")!!,
-        prefs.getInt(RATING, 0),
-        prefs.getInt(RESPECT, 0)
-    )
 
+    fun saveAppTheme(theme: Int) {
+putValue(APP_THEME to theme)
+    }
+    fun getAppTheme():Int  = prefs.getInt(APP_THEME, AppCompatDelegate.MODE_NIGHT_NO)
     fun saveProfile(profile: Profile) {
         with(profile){
             putValue(FIRST_NAME to firstName)
@@ -35,6 +33,14 @@ object PreferencesRepository {
             putValue(RESPECT to respect)
         }
     }
+    fun getProfile(): Profile = Profile(
+        prefs.getString(FIRST_NAME, "")!!,
+        prefs.getString(LAST_NAME, "")!!,
+        prefs.getString(ABOUT, "")!!,
+        prefs.getString(REPOS, "")!!,
+        prefs.getInt(RATING, 0),
+        prefs.getInt(RESPECT, 0)
+    )
     private fun putValue(pair:Pair<String,Any>) = with(prefs.edit()){
         val key = pair.first
         val value = pair.second
@@ -48,4 +54,6 @@ object PreferencesRepository {
         }
         apply()
     }
+
+
 }
