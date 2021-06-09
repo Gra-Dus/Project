@@ -14,4 +14,5 @@
     <dimen name="space_maximum_56">56dp</dimen>
     <dimen name="item_size">72dp</dimen>
     <dimen name="avatar_size">40dp</dimen>
+    <dimen name="counter_size">20dp</dimen>
 </resources>
