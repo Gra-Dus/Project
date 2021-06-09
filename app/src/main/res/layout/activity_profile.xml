@@ -5,13 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui_profile.profile.ProfileActivity"
+    tools:context=".ui.profile.ProfileActivity"
     android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.example.firstproject.ui_profile.custom.AspectRatioImageView
+        <com.example.firstproject.ui.custom.AspectRatioImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
