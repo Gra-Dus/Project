@@ -1,11 +1,12 @@
 package com.example.firstproject.models
 
 import com.example.firstproject.models.data.Chat
+import com.example.firstproject.models.data.User
 import java.util.*
 
 class TextMessage(
     id:String,
-    from:User?,
+    from: User?,
     chat: Chat,
     IsIncoming:Boolean = false,
     date: Date = Date(),

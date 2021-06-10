@@ -1,18 +1,22 @@
 package com.example.firstproject.models.data
 
 import com.example.firstproject.models.BaseMessage
-import com.example.firstproject.models.User
 import com.example.firstproject.utils.Utils
 import java.util.*
 import com.example.firstproject.extenshions.shortFormat
 
-class Chat(
+data class Chat(
     val id:String,
     val title: String,
     val members:MutableList<User> = mutableListOf(),
     val messages:MutableList<BaseMessage> = mutableListOf(),
-var isArchived:Boolean = false
+    var isArchived:Boolean = false
 ) {
+    enum class ChatType{
+        SINGLE,
+        GROUP,
+        ARCHIVE
+    }
     fun unreadableMessageCount():Int{
         //TODO implement me
         return 0
@@ -21,9 +25,9 @@ var isArchived:Boolean = false
         //TODO implement me
         return Date()
     }
-    private fun lastMessageShort():String{
+    private fun lastMessageShort():Pair<String,String>{
         //TODO implement me
-        return "Сообщений еще нет"
+        return "Сообщений еще нет" to "@Kelly Jons"
     }
     private fun isSingle()= members.size==1
     fun toChatItem(): ChatItem {
@@ -34,7 +38,7 @@ var isArchived:Boolean = false
                 user.avatar,
                 Utils.initials(user.firstName,user.lastName) ?:"??",
                 "${user.firstName?:""} ${user.lastName ?: ""}",
-                lastMessageShort(),
+                lastMessageShort().first,
                 unreadableMessageCount(),
                 lastMessageData()?.shortFormat(),
                 user.isOnline
@@ -45,10 +49,12 @@ var isArchived:Boolean = false
                 null,
                 "",
                 title,
-                lastMessageShort(),
+                lastMessageShort().first,
                 unreadableMessageCount(),
                 lastMessageData()?.shortFormat(),
-                false
+                false,
+                ChatType.GROUP,
+                lastMessageShort().second
             )
         }
     }

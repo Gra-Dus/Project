@@ -1,11 +1,12 @@
 package com.example.firstproject.models
 
 import com.example.firstproject.models.data.Chat
+import com.example.firstproject.models.data.User
 import java.util.*
 
 abstract class BaseMessage(
     val id:String,
-    val from:User?,
+    val from: User?,
     val chat: Chat,
     val IsIncoming:Boolean = false,
     val date:Date = Date()

@@ -5,5 +5,7 @@
         <item name="colorAccentedSurface">@color/color_divider_dark</item>
         <item name="colorIcon">@color/colorPrimary</item>
         <item name="colorDivider">@color/color_divider_dark</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowAnimationStyle">@style/ActivityTransitions</item>
     </style>
 </resources>

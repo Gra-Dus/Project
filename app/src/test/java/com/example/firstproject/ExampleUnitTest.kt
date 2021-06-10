@@ -3,6 +3,7 @@ package com.example.firstproject
 import com.example.firstproject.extenshions.*
 import com.example.firstproject.models.*
 import com.example.firstproject.models.data.Chat
+import com.example.firstproject.models.data.User
 import org.junit.Test
 
 import org.junit.Assert.*

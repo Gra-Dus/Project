@@ -1,9 +1,8 @@
 package com.example.firstproject.extenshions
 
-import com.example.firstproject.models.User
+import com.example.firstproject.models.data.User
 import com.example.firstproject.models.UserView
 import com.example.firstproject.utils.Utils
-import java.util.*
 
 fun User.toUserView():UserView{
     val nickname = Utils.traneliteration("$firstName $lastName", " ")
