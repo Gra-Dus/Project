@@ -58,6 +58,13 @@ data class Chat(
             )
         }
     }
+    companion object Factory{
+        private var lastid:Int = -1
+        fun makeChat(members: MutableList<User>): Chat {
+            lastid++
+            return Chat(lastid.toString(),members.first().firstName!!,members)
+        }
+    }
 
 }
 

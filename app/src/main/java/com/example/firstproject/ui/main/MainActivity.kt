@@ -16,7 +16,6 @@ import com.example.firstproject.ui.group.GroupActivity
 import com.example.firstproject.viewmodels.MainViewModel
 import com.google.android.material.chip.Chip
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_group.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity:AppCompatActivity() {
@@ -30,7 +29,7 @@ class MainActivity:AppCompatActivity() {
         initViewModel()
     }
     private fun initToolbar(){
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar_main)
     }
     @SuppressLint("ShowToast")
     private fun initViews(){
@@ -50,7 +49,7 @@ class MainActivity:AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@MainActivity)
         addItemDecoration(divider)
     }
-        fab.setOnClickListener{
+        fab_main.setOnClickListener{
             val intent = Intent(this, GroupActivity::class.java)
             startActivity(intent)
         }
