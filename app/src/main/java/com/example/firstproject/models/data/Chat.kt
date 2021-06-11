@@ -18,16 +18,13 @@ data class Chat(
         ARCHIVE
     }
     fun unreadableMessageCount():Int{
-        //TODO implement me
-        return 0
+        return messages.size
     }
     private fun lastMessageData(): Date?{
-        //TODO implement me
-        return Date()
+        return if(messages.size>0) messages.lastOrNull()?.date else Date()
     }
     private fun lastMessageShort():Pair<String,String>{
-        //TODO implement me
-        return "Сообщений еще нет" to "@Kelly Jons"
+        return if(messages.size>0) messages.lastOrNull().toString() to "@${messages.lastOrNull()?.from?.firstName!!}" else "Сообщений еще нет" to "@Kelly Jons"
     }
     private fun isSingle()= members.size==1
     fun toChatItem(): ChatItem {
