@@ -7,9 +7,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.SearchView
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.children
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +16,7 @@ import com.example.firstproject.R
 import com.example.firstproject.models.data.UserItem
 import com.example.firstproject.ui.adapters.UserAdapter
 import com.example.firstproject.viewmodels.GroupViewModel
+import com.example.firstproject.viewmodels.MainViewModel
 import com.google.android.material.chip.Chip
 import kotlinx.android.synthetic.main.activity_group.*
 import kotlinx.android.synthetic.main.activity_group.fab
@@ -68,7 +68,7 @@ class GroupActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-       return if(item?.itemId == android.R.id.home){
+       return if(item.itemId == android.R.id.home){
            finish()
            overridePendingTransition(R.anim.idle, R.anim.bottom_down)
            true
@@ -114,9 +114,9 @@ class GroupActivity : AppCompatActivity() {
     }
     private fun updateChips(listUsers:List<UserItem>){
         chip_group.visibility = if(listUsers.isEmpty()) View.GONE else View.VISIBLE
-        val users = listUsers.associate { user-> user.id to user }
+        val users = listUsers.associateBy { user -> user.id }
             .toMutableMap()
-        val views = chip_group.children.associate { view-> view.tag to view }
+        val views = chip_group.children.associateBy { view -> view.tag }
         for((k,v) in views){
             if(!users.containsKey(k)) chip_group.removeView(v)
             else users.remove(k)

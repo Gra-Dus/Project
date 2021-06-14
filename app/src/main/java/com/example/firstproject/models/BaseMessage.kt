@@ -21,7 +21,5 @@ abstract class BaseMessage(
                 else -> TextMessage("$lastId",from,chat,date = date,text = payload as String )
         }
     }
-
-
     }
 }

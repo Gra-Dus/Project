@@ -49,5 +49,4 @@ class GroupViewModel: ViewModel() {
         groupRepository.createChat(selectedItems.value!!)
     }
 
-
 }

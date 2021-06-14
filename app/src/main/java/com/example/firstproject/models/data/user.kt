@@ -32,7 +32,7 @@ data class User (
         else -> "Последний раз был ${lastVisit!!.humanizeDiff()}"}
         return UserItem(
             id,
-            "${firstName.orEmpty()} ${lastName.orEmpty()}",
+            "$firstName $lastName",
             Utils.initials(firstName,lastName),
             avatar,
             lastActivity,

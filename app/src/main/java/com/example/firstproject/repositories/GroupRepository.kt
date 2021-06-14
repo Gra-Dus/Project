@@ -1,12 +1,13 @@
 package com.example.firstproject.repositories
 
+import androidx.lifecycle.MutableLiveData
 import com.example.firstproject.data.menedgers.CacheManager
 import com.example.firstproject.models.data.Chat
 import com.example.firstproject.models.data.User
 import com.example.firstproject.models.data.UserItem
 
 object GroupRepository {
-    fun loadUsers():List<User> = listOf()
+    fun loadUsers(): List<User> = CacheManager.loadUsers().value!!
     fun createChat(items: List<UserItem>) {
         val ids = items.map{it.id}
         val users = CacheManager.findUsersByIds(ids).toMutableList()
